@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+	</head>
+	<body>
+		<h2>Tags: </h2>
+		<div class="form-control">
+			<div class="chips">
+	    <i class="close material-icons">close</i>
+	  	</div>
+		</div>
+	</body>
+	<!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+	<script>
+		$('.chips').material_chip();
+		var palabras = new Array();
+		$('.chips').on('chip.add', function(e, chip){
+	    palabras.push(chip.tag);
+			// console.log(palabras);
+	  });
+		$('.chips').on('chip.delete', function(e, chip){
+			 let index = palabras.indexOf(chip.tag);
+			palabras.splice(index,1);
+			//console.log(palabras);
+	  });
+	</script>
+</html>
